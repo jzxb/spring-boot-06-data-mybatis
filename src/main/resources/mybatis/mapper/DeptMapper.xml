@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lhx.springboot.mapper.DepartmentMapper">
+    <!--public Department getDeptById(Integer id);
+
+    public int deleteDeptById(Integer id);
+
+    public int insertDept(Department department);
+
+    public int updateDept(Department department);-->
+    <select id="getDeptById" resultType="org.lhx.springboot.bean.Department">
+        SELECT * FROM department WHERE id = #{id}
+    </select>
+
+    <insert id="insertDept">
+        INSERT INTO department(departmentName) VALUES (#{departmentName})
+    </insert>
+    
+    <delete id="deleteDeptById">
+        DELETE FROM department WHERE id = #{id}
+    </delete>
+    
+    <update id="updateDept">
+        UPDATE department SET department_name=#{departmentName} WHERE id=#{id}
+    </update>
+</mapper>
